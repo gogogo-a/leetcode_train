@@ -5,10 +5,23 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Debug",
+            "name": "C++ Debug Current File",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/haogeng/Desktop/genghao/ld/8.31/test",
+            "program": "${fileDirname}/${fileBasenameNoExtension}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: g++ build active file"
+        },
+        {
+            "name": "C++ Debug Specific File",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "/Users/haogeng/Desktop/genghao/ld/8.31/反转字符串中的单词",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/8.31",
@@ -17,6 +30,5 @@
             "MIMode": "lldb",
             "preLaunchTask": "C/C++: g++ build active file"
         }
-
     ]
 }

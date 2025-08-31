@@ -1,0 +1,20 @@
+.DS_Store
+.vscode
+.idea
+.project
+.settings
+.classpath
+.factorypath
+.metadata
+.recommenders
+
+# 忽略所有.dSYM文件和目录
+*.dSYM/
+*.dSYM
+
+# 忽略没有后缀的可执行文件
+8.31/*
+!8.31/*.cpp
+!8.31/*.h
+!8.31/*.hpp
+
