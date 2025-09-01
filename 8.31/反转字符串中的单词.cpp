@@ -21,7 +21,7 @@ class Solution{
             };
             m=n;
         }
-        return s.substr(0,res.size()-1); 
+        return res.substr(0,res.size()-1); 
         
 
     };
