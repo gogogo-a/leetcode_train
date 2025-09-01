@@ -12,7 +12,7 @@ class Solution {
                 int cont=0;
                 char s=chars[r];
                 while (r<chars.size() && s==chars[r] ) {
-                    r++;
+                     r++;
                     cont++;
                 }
                 chars[w++]=s;
