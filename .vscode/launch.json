@@ -18,17 +18,44 @@
             "preLaunchTask": "C/C++: g++ build active file"
         },
         {
-            "name": "C++ Debug Specific File",
+            "name": "C++ Debug 8.31 Files",
             "type": "cppdbg",
             "request": "launch",
-            "program": "/Users/haogeng/Desktop/genghao/ld/8.31/反转字符串中的单词",
+            "program": "${workspaceFolder}/8.31/${input:select8_31File}",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/8.31",
             "environment": [],
             "externalConsole": true,
             "MIMode": "lldb",
-            "preLaunchTask": "C/C++: g++ build active file"
+            "preLaunchTask": "C/C++: g++ build 8.31 file"
+        },
+        {
+            "name": "C++ Debug 9.1 Files",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/9.1/${input:select9_1File}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/9.1",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: g++ build 9.1 file"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "select8_31File",
+            "type": "promptString",
+            "description": "输入要调试的8.31目录下的文件名（不含后缀）",
+            "default": "反转字符串中的单词"
+        },
+        {
+            "id": "select9_1File",
+            "type": "promptString",
+            "description": "输入要调试的9.1目录下的文件名（不含后缀）",
+            "default": "压缩字符串"
         }
     ]
 }
