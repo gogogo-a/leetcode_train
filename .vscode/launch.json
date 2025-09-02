@@ -18,6 +18,19 @@
             "preLaunchTask": "C/C++: g++ build active file"
         },
         {
+            "name": "C++ Debug Any Folder File",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/${input:selectFolder}/${input:selectFile}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/${input:selectFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: g++ build any folder file"
+        },
+        {
             "name": "C++ Debug 8.31 Files",
             "type": "cppdbg",
             "request": "launch",
@@ -42,9 +55,34 @@
             "externalConsole": true,
             "MIMode": "lldb",
             "preLaunchTask": "C/C++: g++ build 9.1 file"
+        },
+        {
+            "name": "C++ Debug 9.2 Files",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/9.2/${input:select9_2File}",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/9.2",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb",
+            "preLaunchTask": "C/C++: g++ build 9.2 file"
         }
     ],
     "inputs": [
+        {
+            "id": "selectFolder",
+            "type": "promptString",
+            "description": "输入要调试的文件夹名称",
+            "default": "9.2"
+        },
+        {
+            "id": "selectFile",
+            "type": "promptString",
+            "description": "输入要调试的文件名（不含后缀）",
+            "default": "K 和数对的最大数目"
+        },
         {
             "id": "select8_31File",
             "type": "promptString",
@@ -56,6 +94,12 @@
             "type": "promptString",
             "description": "输入要调试的9.1目录下的文件名（不含后缀）",
             "default": "压缩字符串"
+        },
+        {
+            "id": "select9_2File",
+            "type": "promptString",
+            "description": "输入要调试的9.2目录下的文件名（不含后缀）",
+            "default": "K 和数对的最大数目"
         }
     ]
 }

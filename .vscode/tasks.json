@@ -26,14 +26,34 @@
         },
         {
             "type": "cppbuild",
+            "label": "C/C++: g++ build any folder file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++11",
+                "-g",
+                "\"${workspaceFolder}/${input:selectFolder}/${input:selectFile}.cpp\"",
+                "-o",
+                "\"${workspaceFolder}/${input:selectFolder}/${input:selectFile}\""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译器: /usr/bin/g++"
+        },
+        {
+            "type": "cppbuild",
             "label": "C/C++: g++ build 8.31 file",
             "command": "/usr/bin/g++",
             "args": [
                 "-std=c++11",
                 "-g",
-                "${workspaceFolder}/8.31/${input:select8_31File}.cpp",
+                "\"${workspaceFolder}/8.31/${input:select8_31File}.cpp\"",
                 "-o",
-                "${workspaceFolder}/8.31/${input:select8_31File}"
+                "\"${workspaceFolder}/8.31/${input:select8_31File}\""
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -51,9 +71,9 @@
             "args": [
                 "-std=c++11",
                 "-g",
-                "${workspaceFolder}/9.1/${input:select9_1File}.cpp",
+                "\"${workspaceFolder}/9.1/${input:select9_1File}.cpp\"",
                 "-o",
-                "${workspaceFolder}/9.1/${input:select9_1File}"
+                "\"${workspaceFolder}/9.1/${input:select9_1File}\""
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -63,9 +83,41 @@
             ],
             "group": "build",
             "detail": "编译器: /usr/bin/g++"
-        }
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ build 9.2 file",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++11",
+                "-g",
+                "\"${workspaceFolder}/9.2/${input:select9_2File}.cpp\"",
+                "-o",
+                "\"${workspaceFolder}/9.2/${input:select9_2File}\""
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译器: /usr/bin/g++"
+            }
     ],
     "inputs": [
+        {
+            "id": "selectFolder",
+            "type": "promptString",
+            "description": "输入要编译的文件夹名称",
+            "default": "9.2"
+        },
+        {
+            "id": "selectFile",
+            "type": "promptString",
+            "description": "输入要编译的文件名（不含后缀）",
+            "default": "K 和数对的最大数目"
+        },
         {
             "id": "select8_31File",
             "type": "promptString",
@@ -77,6 +129,12 @@
             "type": "promptString",
             "description": "输入要编译的9.1目录下的文件名（不含后缀）",
             "default": "压缩字符串"
+        },
+        {
+            "id": "select9_2File",
+            "type": "promptString",
+            "description": "输入要编译的9.2目录下的文件名（不含后缀）",
+            "default": "K 和数对的最大数目"
         }
     ]
 } 
