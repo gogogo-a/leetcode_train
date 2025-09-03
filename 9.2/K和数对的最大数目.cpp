@@ -1,7 +1,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <unordered_map>
 using namespace std;
+//暴力破解
 class Solution {
     public:
         int maxOperations(vector<int>& nums, int k) {
@@ -24,6 +26,54 @@ class Solution {
             return c;
             }
 };
+
+//hashmap
+class Solution1 {
+    public:
+        int maxOperations(vector<int>& nums, int k) {
+            int res=0;
+            unordered_map<int,int>counts;
+            for (int current_num : nums) {
+                int need=k-nums[current_num];
+                if (counts.count(need) && counts[need]>0){
+                    res++;
+                    counts[need]--;
+                }
+                else {
+                    counts[current_num]++;
+                }
+            }
+            return  res;
+        }
+    };
+//双指针
+class Solution2 {
+        public:
+            int maxOperations(vector<int>& nums, int k) {
+                sort(nums.begin(), nums.end());
+                int l=0,r=nums.size();
+                int res=0;
+                while (l<r) {
+                    int sun= nums[l]+nums[r];
+                    if (l<r&&sun==k)
+                    {
+                        l++;
+                        r--;
+                        res++;
+                    }
+                    else {
+                    if (sun>k) {
+                        r--;
+                    
+                    }
+                    else {
+                    l++;
+                    }
+                    }
+                }
+                return res;
+            }
+        };
 
 int main() {
     Solution sol;
