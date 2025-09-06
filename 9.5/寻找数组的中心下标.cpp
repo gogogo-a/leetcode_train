@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+//前缀和
 class Solution {
     public:
         int pivotIndex(vector<int>& nums) {

@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 using namespace std;
+//滑动窗口
 class Solution {
     public:
         int longestSubarray(vector<int>& nums) {
