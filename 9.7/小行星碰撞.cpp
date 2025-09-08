@@ -8,6 +8,7 @@
 #include <unordered_set>
 #include <vector>
 using namespace std;
+//栈
 class Solution {
     public:
         vector<int> asteroidCollision(vector<int>& asteroids) {
